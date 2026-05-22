@@ -79,7 +79,25 @@ main {
 
 .hero {
   padding: 78px 0 48px;
-  max-width: 780px;
+  max-width: 980px;
+}
+
+.hero__intro {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(28px, 5vw, 56px);
+}
+
+.hero__copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.hero__portrait {
+  width: auto;
+  height: clamp(150px, 18vw, 220px);
+  object-fit: contain;
+  flex: 0 0 auto;
 }
 
 .hero h1,
@@ -382,5 +400,16 @@ main {
   .post-grid,
   .category-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 440px) {
+  .hero__intro {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .hero__portrait {
+    height: 136px;
   }
 }
