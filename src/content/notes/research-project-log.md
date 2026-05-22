@@ -2,7 +2,6 @@
 title: "科研项目阶段记录示例"
 date: 2026-05-02
 category: "research"
-tags: ["research", "project-log", "materials"]
 summary: "展示如何记录一个科研项目在不同阶段的目标、进展和下一步问题。"
 featured: false
 ---
@@ -15,7 +14,7 @@ featured: false
 
 ## 已完成事项
 
-记录已经完成的计算、阅读过的相关论文，以及当前最可信的观察。
+记录已经完成的计算、阅读过的相关材料，以及当前最可信的观察。
 
 ## 下一步
 

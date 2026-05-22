@@ -6,19 +6,15 @@ interface Props {
   description?: string;
 }
 
-const siteTitle = "个人知识空间";
+const siteTitle = "Leone1111";
 const { title, description = "莫向外求，个人纪录与思考的空间" } = Astro.props;
 const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
 const navItems = [
   { href: "/", label: "首页" },
   { href: "/ideas", label: "想法" },
   { href: "/books", label: "读书" },
-  { href: "/papers", label: "论文" },
   { href: "/projects", label: "项目" },
-  { href: "/scripts", label: "脚本" },
   { href: "/research", label: "科研" },
-  { href: "/tags", label: "标签" },
-  { href: "/about", label: "关于我" },
 ];
 ---
 
@@ -32,7 +28,6 @@ const navItems = [
   </head>
   <body>
     <header class="site-header">
-      <a class="site-brand" href="/">个人知识空间</a>
       <nav class="site-nav" aria-label="主导航">
         {
           navItems.map((item) => (

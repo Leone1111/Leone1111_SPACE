@@ -1,5 +1,4 @@
 ---
-import TagList from "./TagList.astro";
 import { categoryLabels, formatDate, getNoteUrl } from "../lib/content";
 import type { Note } from "../lib/content";
 
@@ -17,5 +16,4 @@ const { note } = Astro.props;
   </div>
   <h3><a href={getNoteUrl(note)}>{note.data.title}</a></h3>
   <p>{note.data.summary}</p>
-  <TagList tags={note.data.tags} />
 </article>

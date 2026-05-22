@@ -2,7 +2,6 @@
 title: "读书笔记示例：如何整理一本书"
 date: 2026-05-14
 category: "books"
-tags: ["reading", "notes", "method"]
 summary: "用问题、章节和复盘三个层次整理一本书的阅读笔记。"
 featured: false
 ---

@@ -1,6 +1,6 @@
-# 个人知识空间
+# Leone1111
 
-这是一个使用 Astro 和 Markdown 构建的个人知识空间网站，用于长期记录想法、读书笔记、论文笔记、科研项目、代码脚本和个人项目。
+这是一个使用 Astro 和 Markdown 构建的个人记录网站，用于长期记录想法、读书笔记、科研项目和个人项目。
 
 网站是纯静态项目，不需要后端、数据库或登录系统。内容全部放在本地 Markdown 文件里，适合用 GitHub 管理，也适合部署到 Netlify。
 
@@ -17,7 +17,7 @@ src/content/notes/
 新增文章时，复制一篇现有 Markdown，改文件名和 frontmatter 即可。建议文件名使用英文短横线，例如：
 
 ```text
-src/content/notes/my-new-paper-note.md
+src/content/notes/my-new-note.md
 src/content/notes/vasp-convergence-test.md
 ```
 
@@ -28,8 +28,7 @@ src/content/notes/vasp-convergence-test.md
 title: "文章标题"
 date: 2026-05-22
 category: "ideas"
-tags: ["tag-a", "tag-b"]
-summary: "一句话摘要，显示在首页、分类页和标签页。"
+summary: "一句话摘要，显示在首页和分类页。"
 featured: false
 ---
 ```
@@ -39,7 +38,6 @@ featured: false
 - `title`：文章标题
 - `date`：发布日期或更新日期，建议使用 `YYYY-MM-DD`
 - `category`：文章所属栏目
-- `tags`：文章标签，可以写多个
 - `summary`：文章摘要
 - `featured`：是否显示在首页“精选内容”模块，写 `true` 或 `false`
 
@@ -51,9 +49,7 @@ featured: false
 | --- | --- | --- |
 | `ideas` | `/ideas` | 想法、观察、长期问题 |
 | `books` | `/books` | 读书笔记、摘录、书评 |
-| `papers` | `/papers` | 论文笔记、文献阅读、方法整理 |
 | `projects` | `/projects` | 个人项目、工具原型、阶段成果 |
-| `scripts` | `/scripts` | 代码脚本、命令片段、自动化流程 |
 | `research` | `/research` | 科研项目、实验进展、阶段记录 |
 
 如果以后要增加新栏目，需要同时更新：
@@ -64,32 +60,6 @@ src/pages/
 ```
 
 简单做法是复制一个现有分类页，例如 `src/pages/ideas.astro`，改成新栏目的路径和 `category`。
-
-### 3. 标签怎么写
-
-标签写在文章 frontmatter 的 `tags` 里：
-
-```yaml
-tags: ["vasp", "hpc", "automation"]
-```
-
-网站会自动生成：
-
-- 标签总页：`/tags`
-- 单个标签页：`/tags/vasp`
-- 文章详情页里的可点击标签
-
-建议标签尽量使用简洁英文，方便形成稳定 URL。例如：
-
-```text
-vasp
-hpc
-reading
-materials
-workflow
-python
-literature
-```
 
 ## 本地预览和修改
 
@@ -116,7 +86,6 @@ http://localhost:4321
 | 想修改的内容 | 文件位置 |
 | --- | --- |
 | 首页内容和模块 | `src/pages/index.astro` |
-| 关于我页面 | `src/pages/about.astro` |
 | 文章内容 | `src/content/notes/*.md` |
 | 栏目名称和描述 | `src/lib/content.ts` |
 | 全站样式 | `src/styles/global.css` |
@@ -137,7 +106,7 @@ npm run build
 
 1. 在 `src/content/notes/` 新增或修改 Markdown。
 2. 运行 `npm run dev` 本地预览。
-3. 检查首页、对应分类页、文章详情页和标签页。
+3. 检查首页、对应分类页和文章详情页。
 4. 运行 `npm run build` 做构建检查。
 5. 提交到 GitHub。
 6. Netlify 自动重新部署。
