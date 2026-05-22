@@ -1,0 +1,47 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CategoryNav from "../components/CategoryNav.astro";
+import PostCard from "../components/PostCard.astro";
+import { sortByDate } from "../lib/content";
+
+const notes = sortByDate(await getCollection("notes"));
+const recentNotes = notes.slice(0, 6);
+const featuredNotes = notes.filter((note) => note.data.featured);
+---
+
+<BaseLayout>
+  <section class="hero">
+    <p class="eyebrow">Personal Knowledge Space</p>
+    <h1>个人知识空间</h1>
+    <p class="hero__lead">一个记录研究、阅读、项目、脚本与长期思考的个人知识空间。</p>
+  </section>
+
+  <section class="section">
+    <div class="section__heading">
+      <p class="eyebrow">Recent</p>
+      <h2>最近更新</h2>
+    </div>
+    <div class="post-grid">
+      {recentNotes.map((note) => <PostCard note={note} />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section__heading">
+      <p class="eyebrow">Categories</p>
+      <h2>内容分类</h2>
+    </div>
+    <CategoryNav />
+  </section>
+
+  <section class="section">
+    <div class="section__heading">
+      <p class="eyebrow">Featured</p>
+      <h2>精选内容</h2>
+    </div>
+    <div class="post-grid">
+      {featuredNotes.map((note) => <PostCard note={note} />)}
+    </div>
+  </section>
+</BaseLayout>

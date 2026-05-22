@@ -1,0 +1,53 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const siteTitle = "个人知识空间";
+const { title, description = "一个记录研究、阅读、项目、脚本与长期思考的个人知识空间。" } = Astro.props;
+const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+const navItems = [
+  { href: "/", label: "首页" },
+  { href: "/ideas", label: "想法" },
+  { href: "/books", label: "读书" },
+  { href: "/papers", label: "论文" },
+  { href: "/projects", label: "项目" },
+  { href: "/scripts", label: "脚本" },
+  { href: "/research", label: "科研" },
+  { href: "/tags", label: "标签" },
+  { href: "/about", label: "关于我" },
+];
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-brand" href="/">个人知识空间</a>
+      <nav class="site-nav" aria-label="主导航">
+        {
+          navItems.map((item) => (
+            <a href={item.href} class:list={{ active: Astro.url.pathname === item.href }}>
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>用 Markdown 慢慢保存值得回看的材料。</p>
+    </footer>
+  </body>
+</html>

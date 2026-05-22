@@ -1,0 +1,14 @@
+---
+import { categories } from "../lib/content";
+---
+
+<div class="category-grid">
+  {
+    categories.map((category) => (
+      <a class="category-entry" href={category.href}>
+        <span>{category.label}</span>
+        <p>{category.description}</p>
+      </a>
+    ))
+  }
+</div>
