@@ -85,17 +85,17 @@ main {
 .hero__intro {
   display: flex;
   align-items: flex-start;
-  gap: clamp(28px, 5vw, 56px);
+  gap: 24px;
 }
 
 .hero__copy {
   min-width: 0;
-  flex: 1;
+  flex: 0 1 auto;
 }
 
 .hero__portrait {
   width: auto;
-  height: clamp(150px, 18vw, 220px);
+  height: clamp(150px, 20vw, 240px);
   object-fit: contain;
   flex: 0 0 auto;
 }
