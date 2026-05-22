@@ -90,7 +90,28 @@ main {
   letter-spacing: 0;
 }
 
-.hero__lead,
+.hero__lead {
+  max-width: 720px;
+  margin: 20px 0 0;
+}
+
+.hero__lead p {
+  margin: 0;
+}
+
+.hero__motto {
+  color: var(--text);
+  font-size: 1.45rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.hero__sublead {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
 .page-header p {
   max-width: 720px;
   margin: 20px 0 0;
