@@ -1,7 +1,7 @@
 ---
 title: "Markdown规则"
 date: 2026-05-23
-category: "ideas"
+category: "tools"
 summary: "辅助查询Markdown规则，自己动手写会熟悉的更快"
 featured: false
 ---

@@ -50,6 +50,7 @@ featured: false
 | `ideas` | `/ideas` | 想法、观察、长期问题 |
 | `books` | `/books` | 读书笔记、摘录、书评 |
 | `projects` | `/projects` | 个人项目、工具原型、阶段成果 |
+| `tools` | `/tools` | 常用工具、写作规则、查询手册 |
 | `research` | `/research` | 科研项目、实验进展、阶段记录 |
 
 如果以后要增加新栏目，需要同时更新：

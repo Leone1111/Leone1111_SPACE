@@ -23,6 +23,12 @@ export const categories: Array<{ key: CategoryKey; label: string; href: string; 
     description: "追踪个人项目、工具原型和阶段性成果。",
   },
   {
+    key: "tools",
+    label: "工具",
+    href: "/tools",
+    description: "整理常用工具、写作规则和可随时查询的操作手册。",
+  },
+  {
     key: "research",
     label: "科研",
     href: "/research",
